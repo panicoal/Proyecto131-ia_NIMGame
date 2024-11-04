@@ -1,14 +1,14 @@
 # Proyecto131-ia_NIMGame
-Nota> 🤡
-`No podemos usar librerias >:D`
+NIM 🤡
+`No librerias`
 
-## Instalar el entorno virtual, para las librerias.
+## comando .env
 
 ```bash
 py -m venv .venv
 ```
 
-## Activar el entorno virtual.
+## Activar .env
 
 ```bash
 .venv\Scripts\activate
