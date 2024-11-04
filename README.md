@@ -1,4 +1,15 @@
 # Proyecto131-ia_NIMGame
-Prueba Git 🤡
+Nota> 🤡
+`No podemos usar librerias >:D`
 
-kEnShI gAmE iS GoD
+## Instalar el entorno virtual, para las librerias.
+
+```bash
+py -m venv .venv
+```
+
+## Activar el entorno virtual.
+
+```bash
+.venv\Scripts\activate
+```
