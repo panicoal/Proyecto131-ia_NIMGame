@@ -19,10 +19,12 @@ def pres_2(objetos, quita):
     print("Habra {} objetos en total".format(objetos))
     print("Sacar minimo 1 y  maximo {} objetos".format(quita))
     print("Empiezas...")
-    input("Press Enter")
+    input("Presiona Enter para comenzar")
 def sorteo_opciones():
-    objetos = random.randint(16,23)
-    quita = random.randint(3,5)
+    #objetos = random.randint(16,23)
+    #quita = random.randint(3,5)
+    objetos =20
+    quita = 3 
     return objetos, quita
 def area_de_juego(objetos, quita):
     print("NIM")
@@ -36,11 +38,13 @@ def area_de_juego(objetos, quita):
 def movimiento_jugador(objetos, quita):
     if quita == 3:
         quita = ("1", "2", "3")
+    '''
     elif quita == 4:
         quita = ("1", "2", "3", "4")
     if quita == 5:
         quita = ("1", "2", "3","4","5")
-    q = input()
+    '''
+    q = input("sacas: ")
     while q not in quita or int(q) > objetos:
         if q not in quita:
             q = input("Saca minimo 1 y  maximo {} objetos".format(len(quita))) 
@@ -65,10 +69,10 @@ def movimiento_ordenador_ia(objetos, quita):
         if objetos <= quita:
             objectos_quita = objetos
         #EstrategiaGanadora: Dejar un objeto mas del que se puede quitar
-        elif objetos % (quita+1) == 5:
-            objectos_quita = 5
-        elif objetos % (quita+1) == 4:
-            objectos_quita = 4
+        #elif objetos % (quita+1) == 5:
+        #    objectos_quita = 5
+        #elif objetos % (quita+1) == 4:
+        #    objectos_quita = 4
         elif objetos % (quita+1) == 3:
             objectos_quita = 3
         elif objetos % (quita+1) == 2:
@@ -76,39 +80,43 @@ def movimiento_ordenador_ia(objetos, quita):
         elif objetos % (quita+1) == 1:
             objectos_quita = 1
         elif objetos % (quita+1) == 0:
-            objectos_quita = random.randint(1,2)
-        print(objectos_quita, objetos)
+            objectos_quita = random.randint(1,3)
+        print("Hay: ", objetos,"palitos ","   Saco: ",objectos_quita)
+        print("Quedan:", objetos-objectos_quita," palitos ")
     return objectos_quita
 
 def mostrar_ganador(turno):
     if turno == 2:
-        print("Has Ganado")
+        print("Gana Jugador 2")
     elif turno == 1:
-        print("Gana el ordenador")
+        print("Gana Jugador 1")
     
 #Main
 turno =1 
 objetos, quita = sorteo_opciones()
-os.system("cls")
-nivel=pres_1()
-os.system("cls")
-pres_2(objetos, quita)
+#os.system("cls")
+#nivel=pres_1()
+#os.system("cls")
+pres_2(objetos, quita)  
 jugando = True
 while jugando:
-    os.system("cls")
+    #os.system("cls")
     area_de_juego(objetos,quita)
     if turno==1:
         jugada = movimiento_jugador(objetos,quita)
         turno=2
     elif turno==2:
         time.sleep(1)
-        if nivel == "1":
+        '''if nivel == "1":
             jugada = movimiento_ordenador_random(objetos,quita)
         elif nivel == "2":
             jugada = movimiento_ordenador_ia(objetos,quita)
+        '''
+        jugada = movimiento_jugador(objetos,quita)
+        #jugada = movimiento_ordenador_ia(objetos,quita)
         turno = 1
-    objetos -= jugada
+    objetos = objetos - jugada
     if objetos == 0:
-        os.system("cls")
+        #os.system("cls")
         mostrar_ganador(turno)
         jugando=False 
