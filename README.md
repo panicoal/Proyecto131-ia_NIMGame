@@ -40,4 +40,4 @@ La IA elige aleatoriamente $q \in \{1,2,3\}$
 ## Resumen del Modelo Matemático
 El modelo para la IA se puede expresar como:
 
- \[q = \begin{cases} N \bmod (M + 1) & \text{si } N \bmod (M + 1) \neq 0 \\ \text{valor aleatorio en } \{1,2,.....,M\}, & \text{si } N \bmod (M + 1) = 0 \end{cases}\]
+$$q = \begin{cases} N \bmod (M + 1) & \text{si } N \bmod (M + 1) \neq 0 \\ \text{valor aleatorio en } \{1,2,.....,M\}, & \text{si } N \bmod (M + 1) = 0 \end{cases}$$
