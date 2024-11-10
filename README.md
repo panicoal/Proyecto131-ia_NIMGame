@@ -41,6 +41,6 @@ La IA elige aleatoriamente $q \in \{1,2,3\}$
 El modelo para la IA se puede expresar como:
 
 $q = \begin{cases}
-N \bmod 4, & \text{si } N \bmod 4 \neq 0 \\
-\text{valor aleatorio en } \{1,2,3\}, & \text{si } N \bmod 4 = 0
+N \bmod (M + 1) & \text{si } N \bmod (M + 1) \neq 0 \\
+\text{valor aleatorio en } \{1,2,.....,M\}, & \text{si } N \bmod (M + 1) = 0
 \end{cases}$
